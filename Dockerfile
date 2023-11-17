@@ -14,8 +14,8 @@ ENV PATH="/py/bin:$PATH"
 
 USER django-user
 
-EXPOSE 8000
+EXPOSE 8080
 
 CMD ["python", "manage.py", "makemigrations"]
 CMD ["python", "manage.py", "migrate"]
-CMD ["python", "manage.py", "runserver"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8080"]
