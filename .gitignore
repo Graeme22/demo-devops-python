@@ -5,5 +5,3 @@ __pycache__/
 env/
 google-cloud-sdk/
 db.sqlite3
-api/app/
-api/manage.py
