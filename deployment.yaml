@@ -15,10 +15,10 @@ spec:
         app: python-app
     spec:
       containers:
-      - name: $IMAGE
+      - name: python-app
         # Replace $LOCATION with your Artifact Registry location (e.g., us-west1).
         # Replace $GCLOUD_PROJECT with your project ID.
-        image: $GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA
+        image: $GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/python-app:$GITHUB_SHA
         # This app listens on port 8080 for web traffic by default.
         ports:
         - containerPort: 8000
