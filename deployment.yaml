@@ -42,29 +42,25 @@ metadata:
   labels:
     app: python-app
 spec:
-  ports:
-    - port: 8000
-      targetPort: 8000
+  type: NodePort
   selector:
     app: python-app
+    tier: web
+  ports:
+  - port: 8000
+    targetPort: 8000
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: python-app
+  name: python-app-ingress
   annotations:
     kubernetes.io/ingress.global-static-ip-name: devops
   labels:
-  app: python-app
+    app: python-app
 spec:
-  rules:
-  - host: "microservices.graemeholliday.dev"
-    http:
-      paths:
-        - path: /*
-          pathType: ImplementationSpecific
-          backend:
-            service:
-              name: products-service
-              port:
-              number: 8000
+  defaultBackend:
+    service:
+      name: python-app-service
+      port:
+        number: 8000
