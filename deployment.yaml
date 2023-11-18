@@ -19,10 +19,10 @@ spec:
         image: southamerica-east1-docker.pkg.dev/PROJECT_ID/devops-repository/python-app:GITHUB_SHA
         # This app listens on port 8080 for web traffic by default.
         ports:
-        - containerPort: 8080
+        - containerPort: 8000
         env:
           - name: PORT
-            value: "8080"
+            value: "8000"
         resources:
           requests:
             memory: "1Gi"
@@ -45,8 +45,8 @@ spec:
     app: python-app
     tier: web
   ports:
-  - port: 8080
-    targetPort: 8080
+  - port: 8000
+    targetPort: 8000
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -61,4 +61,4 @@ spec:
     service:
       name: python-app-service
       port:
-        number: 8080
+        number: 8000
