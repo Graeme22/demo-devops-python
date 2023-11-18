@@ -16,7 +16,4 @@ USER django-user
 
 EXPOSE 8080
 
-RUN python manage.py makemigrations
-RUN python manage.py migrate
-
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8080"]

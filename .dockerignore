@@ -6,4 +6,3 @@ env/
 google-cloud-sdk/
 .vscode/
 .github/
-*.sqlite3
