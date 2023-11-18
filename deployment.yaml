@@ -23,15 +23,6 @@ spec:
         env:
           - name: PORT
             value: "8000"
-        resources:
-          requests:
-            memory: "1Gi"
-            cpu: "500m"
-            ephemeral-storage: "1Gi"
-          limits:
-            memory: "1Gi"
-            cpu: "500m"
-            ephemeral-storage: "1Gi"
 ---
 apiVersion: v1
 kind: Service
