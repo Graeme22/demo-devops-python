@@ -70,5 +70,5 @@ jobs:
     - name: Deploy
       run: |-
         sed -i -e 's/GITHUB_SHA/'"$GITHUB_SHA"'/' ${{ github.workspace }}/deployment.yaml
-        sed -i -e 's/PROJECT_ID/'"$GITHUB_SHA"'/' ${{ github.workspace }}/deployment.yaml
+        sed -i -e 's/PROJECT_ID/'"$PROJECT_ID"'/' ${{ github.workspace }}/deployment.yaml
         kubectl apply -f ${{ github.workspace }}/deployment.yaml
