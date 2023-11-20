@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: python-app
-        image: southamerica-east1-docker.pkg.dev/PROJECT_ID/devops-repository/python-app:GITHUB_SHA
+        image: southamerica-east1-docker.pkg.dev/devops-405416/devops-repository/python-app:latest
         # This app listens on port 8080 for web traffic by default.
         ports:
         - containerPort: 8000
