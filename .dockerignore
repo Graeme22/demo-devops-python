@@ -6,3 +6,4 @@ log/*.log
 google-cloud-sdk/
 .vscode/
 .github/
+.coverage

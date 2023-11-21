@@ -7,17 +7,16 @@ venv:
 
 init:
 	docker-compose run --rm app sh -c "django-admin startproject demo ."
-	python manage.py makemigrations
-	python manage.py migrate
+	.venv/bin/python manage.py makemigrations
+	.venv/bin/python manage.py migrate
 
 lint:
-	isort --check --diff api/ demo/
-	flake8 --count --show-source --statistics api/ demo/
-	mypy -p api
-	mypy -p demo
+	.venv/bin/isort --check --diff api/ demo/
+	.venv/bin/flake8 --count --show-source --statistics api/ demo/
 
 test:
-	python manage.py test
+	.venv/bin/coverage run manage.py test
+	.venv/bin/coverage report --fail-under=95
 
 build:
 	docker-compose build
