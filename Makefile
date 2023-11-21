@@ -1,12 +1,9 @@
-.PHONY: venv init lint test build run
+.PHONY: init lint test
 
-venv:
+init:
 	python -m venv .venv
 	.venv/bin/pip install -r requirements.txt
 	.venv/bin/pip install -r requirements-dev.txt
-
-init:
-	docker-compose run --rm app sh -c "django-admin startproject demo ."
 	.venv/bin/python manage.py makemigrations
 	.venv/bin/python manage.py migrate
 
@@ -17,9 +14,3 @@ lint:
 test:
 	.venv/bin/coverage run manage.py test
 	.venv/bin/coverage report --fail-under=95
-
-build:
-	docker-compose build
-
-run:
-	docker-compose up
