@@ -2,7 +2,7 @@
 log/*.log
 *.pyc
 .git
-env/
+.venv/
 google-cloud-sdk/
 .vscode/
 .github/
