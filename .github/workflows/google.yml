@@ -16,7 +16,7 @@ env:
   PROJECT_ID: devops-405416
   GAR_LOCATION: southamerica-east1
   GKE_CLUSTER: gke-devops
-  GKE_ZONE: southamerica-east1-c
+  GKE_ZONE: southamerica-east1
   DEPLOYMENT_NAME: gke-devops
   REPOSITORY: devops-repository
   IMAGE: python-app
